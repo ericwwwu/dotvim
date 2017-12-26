@@ -1,0 +1,130 @@
+set nocompatible              					"We want the latest Vim settings/options.
+
+so ~/.vim/plugins.vim
+
+
+
+syntax enable
+set backspace=indent,eol,start					"Make backspace behave like every other editor.
+let mapleader = ','						          "The default leader is \, but a comma is much better.
+set number
+set ma
+set noerrorbells visualbell t_vb=				"No damn bells!
+set nofoldenable                        "disable folding
+
+
+
+"--------------Visuals----------------"
+set guifont=Fira_Code:h17					      "Use 256 colors. This is useful for Terminal Vim.
+set linespace=10						            "Macvim-specific line-height.
+set background=dark
+set termguicolors
+colorscheme material-monokai
+
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+"We'll fake a custom left padding for each window
+hi LineNr guiBg=bg
+"set foldcolumn=2
+"hi foldcolumn guibg=bg
+
+
+"get rig of ugly split borders.
+hi vertsplit guifg=bg guibg=bg
+
+"--------------Search----------------"
+set hlsearch
+set incsearch
+
+"--------------Split Management----------------"
+set splitbelow
+set splitright
+
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
+"--------------Mappings----------------"
+
+"Make it easy to edit the Vimrc file.
+nmap <Leader>ev :e $MYVIMRC<cr>
+
+"Add simple hightlight removal.
+nmap <leader><space> :nohlsearch<cr>
+
+"Make NERDTree easier to toggle.
+nmap <D-1> :NERDTreeToggle<cr>
+
+nmap <Leader>f :tag<space>
+
+
+
+"--------------Plugins----------------"
+
+"/
+"/ CtrlP
+"/
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
+nmap <D-p> :CtrlP<cr>
+nmap <D-R> :CtrlPBufTag<cr>
+nmap <D-e> :CtrlPMRUFiles<cr>
+
+"/
+"/ NERDTree
+"/
+
+let NERDTreeHijackNetrw = 0
+
+"/
+"/ ultisnips
+"/
+let g:UltiSnipsExpandTrigger="<tab>"
+
+
+
+"/
+"/ Greplace.vim
+"/
+set grepprg=ag							"we want to use ag for search.
+
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+
+"-------------Laravel-Specific----------"
+"nmap <Leader>lr :e routes/web.php<cr>
+"nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
+"nmap <Leader><Leader>m :e app/Http/<cr>
+"nmap <Leader><Leader>v :e resources/views/<cr>
+
+
+
+"-------------irontunnel-Specific----------"
+nmap <Leader>ip :e package.json<cr>
+nmap <Leader>ii :e src/index.js<cr>
+nmap <Leader>ic :e src/config/<cr>
+nmap <Leader>ih :e src/helpers/<cr>
+nmap <Leader>is :e src/<cr>
+nmap <Leader><Leader>m :e src/components/Mobile/<cr>
+nmap <Leader><Leader>e :e src/components/Mobile/End/<cr>
+nmap <Leader><Leader>s :e ~/.vim/snippets/javascript.snippets<cr>
+
+
+"--------------Auto-Commands----------"
+
+"Automatically source the Vimrc file on save.
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END
+
