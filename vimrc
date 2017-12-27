@@ -18,7 +18,7 @@ set nofoldenable                        "disable folding
 set guifont=Fira_Code:h17					      "Use 256 colors. This is useful for Terminal Vim.
 set linespace=10						            "Macvim-specific line-height.
 set background=dark
-set termguicolors
+"set termguicolors
 colorscheme material-monokai
 
 set guioptions-=l
