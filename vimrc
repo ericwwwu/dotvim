@@ -11,7 +11,7 @@ set number
 set ma
 set noerrorbells visualbell t_vb=				"No damn bells!
 set nofoldenable                        "disable folding
-
+set nrformats=                          "using decimal instead of binary"
 
 
 "--------------Visuals----------------"
