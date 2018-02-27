@@ -101,23 +101,31 @@ set grepprg=ag							"we want to use ag for search.
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
 
+
+"/
+"/ Commentary
+"/
+noremap <C-c> :Commentary<cr>
+
+
+
 "-------------Laravel-Specific----------"
-"nmap <Leader>lr :e routes/web.php<cr>
-"nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
-"nmap <Leader><Leader>m :e app/Http/<cr>
+nmap <Leader>lr :e routes/web.php<cr>
+nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
+nmap <Leader><Leader>m :e app/Http/<cr>
 "nmap <Leader><Leader>v :e resources/views/<cr>
 
 
 
 "-------------irontunnel-Specific----------"
-nmap <Leader>ip :e package.json<cr>
-nmap <Leader>ii :e src/index.js<cr>
-nmap <Leader>ic :e src/config/<cr>
-nmap <Leader>ih :e src/helpers/<cr>
-nmap <Leader>is :e src/<cr>
-nmap <Leader><Leader>m :e src/components/Mobile/<cr>
-nmap <Leader><Leader>e :e src/components/Mobile/End/<cr>
-nmap <Leader><Leader>s :e ~/.vim/snippets/javascript.snippets<cr>
+"nmap <Leader>ip :e package.json<cr>
+"nmap <Leader>ii :e src/index.js<cr>
+"nmap <Leader>ic :e src/config/<cr>
+"nmap <Leader>ih :e src/helpers/<cr>
+"nmap <Leader>is :e src/<cr>
+"nmap <Leader><Leader>m :e src/components/Mobile/<cr>
+"nmap <Leader><Leader>e :e src/components/Mobile/End/<cr>
+"nmap <Leader><Leader>s :e ~/.vim/snippets/javascript.snippets<cr>
 
 
 "--------------Auto-Commands----------"
