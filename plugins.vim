@@ -15,6 +15,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tpope/vim-commentary'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
