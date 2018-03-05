@@ -109,6 +109,7 @@ noremap <C-c> :Commentary<cr>
 
 
 
+
 "-------------Laravel-Specific----------"
 nmap <Leader>lr :e routes/web.php<cr>
 nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
