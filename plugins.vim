@@ -17,8 +17,11 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tpope/vim-commentary'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
+<<<<<<< HEAD
 Plugin 'posva/vim-vue'
 Plugin 'Valloric/YouCompleteMe'
+=======
+>>>>>>> 923ea5a94e325fd6ceff03024e06dd4002592946
 
 
 " All of your Plugins must be added before the following line

@@ -55,7 +55,7 @@ nmap <C-L> <C-W><C-L>
 "--------------Mappings----------------"
 
 "Make it easy to edit the Vimrc file.
-nmap <Leader>ev :e $MYVIMRC<cr>
+nmap <Leader>ev :e ~/.vim/vimrc<cr>
 
 "Add simple hightlight removal.
 nmap <leader><space> :nohlsearch<cr>
@@ -66,6 +66,8 @@ nmap <D-1> :NERDTreeToggle<cr>
 nmap <Leader>f :tag<space>
 
 
+
+au BufRead,BufNewFile *.vue set filetype=html
 
 "--------------Plugins----------------"
 
