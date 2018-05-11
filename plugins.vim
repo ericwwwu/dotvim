@@ -18,6 +18,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'posva/vim-vue'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'Valloric/YouCompleteMe'
 
 
