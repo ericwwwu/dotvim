@@ -128,7 +128,7 @@ nmap <Leader><Leader>v :e src/components/vid/<cr>
 nmap <Leader><Leader>h :e src/components/hero/<cr>
 nmap <Leader><Leader>l :e src/components/looks/<cr>
 nmap <Leader><Leader>c :e src/config/<cr>
-nmap <Leader><Leader>s :e src/store/<cr>
+nmap <Leader><Leader>s :e src/<cr>
 nmap <Leader><Leader>r :e ../adidas-icon/src/components/shoes/ShoeHero/index.vue<cr>
 
 "nmap <Leader><Leader>v :e resources/views/<cr>
