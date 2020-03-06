@@ -1,4 +1,5 @@
 set nocompatible              					"We want the latest Vim settings/options.
+set mouse=a
 
 so ~/.vim/plugins.vim
 
@@ -26,8 +27,8 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 "We'll fake a custom left padding for each window
@@ -63,7 +64,7 @@ nmap <Leader>ev :e ~/.vim/vimrc<cr>
 nmap <leader><space> :nohlsearch<cr>
 
 "Make NERDTree easier to toggle.
-nmap <D-1> :NERDTreeToggle<cr>
+nmap <Leader><Leader>t :NERDTreeToggle<cr>
 
 nmap <Leader>f :tag<space>
 
@@ -80,9 +81,9 @@ au BufRead,BufNewFile *.vue set filetype=html
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 
-nmap <D-p> :CtrlP<cr>
-nmap <D-R> :CtrlPBufTag<cr>
-nmap <D-e> :CtrlPMRUFiles<cr>
+" nmap <D-p> :CtrlP<cr>
+" nmap <D-R> :CtrlPBufTag<cr>
+" nmap <D-e> :CtrlPMRUFiles<cr>
 
 "/
 "/ NERDTree
@@ -98,11 +99,20 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 
 "/
-"/ Greplace.vim
+"/ greplace.vim
 "/
-set grepprg=ag							"we want to use ag for search.
+set grepprg=Ack							"we want to use ag for search
+let g:grep_cmd_opts = '--noheading'
 
-let g:grep_cmd_opts = '--line-numbers --noheading'
+
+" ack
+let g:ackprg = "ack-grep -H --nocolor --nogroup --column"
+
+" Open a new tab and search for something
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+
+" Immediately search for the word under the cursor in a new tab
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 
 
@@ -122,16 +132,6 @@ noremap <C-c> :Commentary<cr>
 " nmap <Leader><Leader>m :e app/Http/<cr>
 "nmap <Leader><Leader>v :e resources/views/<cr>
 
-
-"-------------I5923-Specific----------"
-nmap <Leader><Leader>v :e src/components/vid/<cr>
-nmap <Leader><Leader>h :e src/components/hero/<cr>
-nmap <Leader><Leader>l :e src/components/looks/<cr>
-nmap <Leader><Leader>c :e src/config/<cr>
-nmap <Leader><Leader>s :e src/<cr>
-nmap <Leader><Leader>r :e ../adidas-icon/src/components/shoes/ShoeHero/index.vue<cr>
-
-"nmap <Leader><Leader>v :e resources/views/<cr>
 
 
 "-------------irontunnel-Specific----------"
