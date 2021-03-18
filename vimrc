@@ -55,6 +55,16 @@ nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
+"--------------Autoclose brackets----------"
+" inoremap " ""<Left>
+" inoremap ' ''<Left>
+" inoremap ( ()<Left>
+" inoremap [ []<Left>
+" inoremap { {}<Left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
+
+
 "--------------Mappings----------------"
 
 "Make it easy to edit the Vimrc file.
@@ -67,6 +77,8 @@ nmap <leader><space> :nohlsearch<cr>
 nmap <Leader><Leader>t :NERDTreeToggle<cr>
 
 nmap <Leader>f :tag<space>
+
+
 
 
 
@@ -152,4 +164,23 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
 augroup END
+
+
+
+"--------------fix cursor for windows terminal----------"
+if &term =~ '^xterm'
+   " normal mode
+   let &t_EI .= "\<Esc>[0 q"
+   " insert mode
+   let &t_SI .= "\<Esc>[6 q"
+endif
+
+if &term =~ '^screen'
+   " normal mode
+   let &t_EI .= "\<Esc>[0 q"
+   " insert mode
+   let &t_SI .= "\<Esc>[6 q"
+endif
+
+
 
