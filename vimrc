@@ -19,7 +19,7 @@ set nrformats=                          "using decimal instead of binary"
 set guifont=Fira_Code:h17					      "Use 256 colors. This is useful for Terminal Vim.
 set linespace=10						            "Macvim-specific line-height.
 set background=dark
-"set termguicolors
+" set termguicolors
 colorscheme material-monokai
 
 set guioptions-=l
@@ -83,6 +83,7 @@ nmap <Leader>f :tag<space>
 
 
 au BufRead,BufNewFile *.vue set filetype=html
+au BufRead,BufNewFile *.tsx set filetype=typescript
 
 "--------------Plugins----------------"
 
@@ -177,7 +178,7 @@ endif
 
 if &term =~ '^screen'
    " normal mode
-   let &t_EI .= "\<Esc>[0 q"
+   let &t_EI .= "\<Esc>[6 q"
    " insert mode
    let &t_SI .= "\<Esc>[6 q"
 endif
