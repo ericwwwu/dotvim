@@ -107,7 +107,7 @@ let NERDTreeHijackNetrw = 0
 "/
 "/ ultisnips
 "/
-let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
 
 
 
@@ -119,13 +119,13 @@ let g:grep_cmd_opts = '--noheading'
 
 
 " ack
-let g:ackprg = "ack-grep -H --nocolor --nogroup --column"
+" let g:ackprg = "ack-grep -H --nocolor --nogroup --column"
 
 " Open a new tab and search for something
-nmap <leader>a :tab split<CR>:Ack ""<Left>
+" nmap <leader>a :tab split<CR>:Ack ""<Left>
 
 " Immediately search for the word under the cursor in a new tab
-nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+" nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 
 
@@ -136,6 +136,26 @@ nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 "/
 noremap <C-c> :Commentary<cr>
 
+
+
+"/
+"/ YouCompleteMe
+"/
+set completeopt=longest,menu "让vim的补全菜单行为与一般IDE一致（参考vimtip1228）
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>" "回车即选中当前项
+
+"上下左右键的行为 会显示其他信息
+inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
+
+"默认tab s-tab和自动补全冲突
+let g:ycm_key_list_select_completion=['<c-n']
+let g:ycm_key_list_previous_completion=['<c-p']
+let g:ycm_confrm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
+let g:ycm_complete_in_comments = 1 "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1 "在字符输入中也能补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0 "注释和字符串中的文字是否收入补全
 
 
 
